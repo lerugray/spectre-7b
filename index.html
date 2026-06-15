@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SPECTRE — Marx, rendered in seven billion parameters</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://lerugray.github.io/spectre-7b/">
+<meta property="og:title"       content="THE SPECTRE">
+<meta property="og:description" content="Marx. The revolutionary correspondent, rendered in seven billion parameters. A political oracle you run on your own machine. Qwen2.5-7B, public-domain writings. CC-BY-NC-4.0.">
+<meta property="og:image"       content="./assets/og-image.png">
+
+<!-- Twitter -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:url"         content="https://lerugray.github.io/spectre-7b/">
+<meta name="twitter:title"       content="THE SPECTRE">
+<meta name="twitter:description" content="Marx. 7B parameters. Public-domain writings. Runs locally via Ollama. The revolutionary correspondent.">
+<meta name="twitter:image"       content="./assets/og-image.png">
+
+<link rel="stylesheet" href="./styles.css?v=1">
+</head>
+<body>
+
+<div class="starfield" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header">
+  <div class="void-rule-top" aria-hidden="true"></div>
+  <div class="void-rule-thin" aria-hidden="true"></div>
+
+  <div class="header-inner">
+    <span class="lab-crumb">
+      Part of <a href="https://lerugray.github.io/the-elect/" target="_blank" rel="noopener">The Elect</a> &mdash; a one-person voice lab
+    </span>
+
+    <h1 class="persona-title">THE SPECTRE</h1>
+
+    <span class="persona-epithet">Marx, rendered in seven billion parameters</span>
+    <span class="persona-register">revolutionary correspondent &middot; public-domain writings &middot; runs on your machine</span>
+
+    <div class="header-void-rule" aria-hidden="true">
+      <span class="void-line"></span>
+      <span class="void-ornament">&#x25A0; A SPECTRE IS HAUNTING &#x25A0;</span>
+      <span class="void-line"></span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       PORTRAIT + CAPTION
+       ============================================================ -->
+  <section class="portrait-section">
+    <div class="container">
+      <div class="portrait-grid">
+
+        <div class="portrait-frame" aria-label="ASCII portrait of Marx">
+          <pre class="ascii-portrait" aria-hidden="true" id="asciiPortrait">▓▓▓▓▓██▓█▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓█▓▓█▓▓██████▓███▓▓▓▓▓▓▓████▓▓█▓▓
+█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓█▓▓█▓▓▓▓▓▓▓▓██▓▓▓▓█▓▓▓▓▓▓▓▓████▓▓██▓▓
+█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓█▓▓█▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓█▓█▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒░▒░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓█▓▓▓▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░░░░░░▒░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░▒░░░░░░░░░░░░░▒▒░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓█▓▓██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░▒▒░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓█▓█▓██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▒▒▒▒▒▓▒▓▓▓▓▓▓▓▓▓▓▒░▒░▒▒▒░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▒▓▒▓▓▓▓▒▒▒▓▒▒▒▒░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒░▒░▒▓▒░░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓███
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▓▓▒▒▒▒░▒█▓▓▓█▓▒▒▒▒▒▓▓▒░░░░░▒░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓███
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓░░▒▓██████▓░░███▓▒▒▒░░░▒░░░░░░▒░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓████▓██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒░░░▒▒▒░░░░░▒▒▒▒▒▒░░▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓█▓█████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▒▒▒▓▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒▒▒▒▒█▒░░░░▒░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▓▓▒▓▒▓▓▒░░▒▒█▓▓█▒░░░░░░░▒▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓█████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▒▓▒▒▒▒▒▒▒▒▒▒▓▒▒▓▓▓▓▒▒▒▓▒▓▒▓▓█▓▓▓▓█▒▒░░░░░▒▒▒▒▒▒▒▒▒▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▓▒▒▓▒▓▓██████████▓▓▓▒▒▒▒▒░░▒▒▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▒▓▓██████▒█▓████▓▒░▒▒░▒░░▒▒▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▓▓▒▒▒▒▓▒▒▒▒▒▓▒▒▓▓▒▓▓▓▒░▒░▒▒▒▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓█████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓▒▒▒░▒░▒▒▒▒▒▒░░░░░░░▒▒▒▒░░░░░▒▒█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▒▒▒▒▒▒▒▓▓▒▒▒▒▒▒▒▒▒▒░▒▒░▒▒░░░░░░▒░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓▓█████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▓▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒░▒░░░░░░░▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▒▒▒▒▒▓███████▓▓▓▒▒▒░▒▒▒▒▒░░▒░▒░░░░░░░░░▒░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓███████████▒▒▒▒▒▒▒▒▒▒▒░▒░▒░░░░▒░▒░▒▓█████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓█▓▓████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓█████████████▒▒▒▒▒▒▒░▒▒▒░▓▒▒▒▒▒█▓▒▓█████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓█████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████░░░▒▒▒▒░▒▒▓▒▒▓▓██▓██▓███████████▓██▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████░░░░░░░░▒▒▒██████████▓███▓▓▓█▓▓▓▓█▓▓█▒▒▒▓▓▓▓▓▓▓▓▓██▓▓▓▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████████▒░░░░░░░░░░██▓▓▓▓████▓██▓▓▓▓▓▓▒▒▒▓█▓▒▒▒▓▒▒▓▒▓▓▓▓▓▓▓███▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████▓█░░░░░░░░░░░▓▓▓▓▓▓▓▓███▓█▓▒▓▓▓▓▓▒▓▓▓▓▒▒▒▓▒▒▒▒▒█▓▓▓▓▓▓███▓▓▓▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████▓█░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓█▓▓▒▒▒▒▒▓▒▒▒▓█▒▓▓▓▓▓▓██▓▓▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████▒░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▒▓█▓▓▓▓▓▓▒▒▒▒▒▓▒▓▓▓▓▓▓▓▓███▓▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████████░░░░░░░░░██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓███▓▓▓▒▒▓▓▒▒▒▒▒▓▓▓▓▓▓▓██▓▓▓▒▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████████▓░░░░░░██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓██▓▓▓▒▓▓▓▒▒▒▒▓▓█▓█▓▒▒▓██▓▓▒▓█▓██████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████░░▒▒███▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓███▓▓▓██▓▓▒▒▒▒▒▒▒▒▒▓▓▓▒▓██▓▓▓▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████████▒▒▓█████▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓█▓▓▓▓█▓▓▒▒▒▒▒▒▒▒▒▒▒▓▓█▓███▓▓▓▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓█████████████▓▒█▓▒▒███████▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓█▓█▓▓▓█▓▓▒▒▒▒▒▒▒▒▒▒▓▒▒██▒▓███▓▓▓▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓▓████████████░▓░░▒▓▒█████████▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓█▓▓▒▒▒▒▒▒▒▒▒▓▓▓▒▒███▓███▓▓▓▓▓███████
+▓▓▓▓▓▓▓▓▓▓▓▓████████████░▒░░░░▒████████████▓██▓▓▓▓████████████▓█▓▓▓▒▒▒▒▒▒▓▓▓▓▓▒▒▒▓░▓▓███▓▓▓▓████████
+▓▓▓▓▓▓▓▓▓▓▓████████████▒░▒░░░▒██████████████▓██████████████████▓▓▓▓▓▒▓▓▓▓▓▓▓▓▒▒▒▒█▒▓▓███▓▓▓▓████████
+▓▓▓▓▓▓▓▓▓▓█████████████▒░▓▒▒▓██████████████▓▓▓▓███▓▓▓▓▓▓███████▓▒▒▒▒▒▓▓▓▒▒▒▓▒▒▒▒▒▓▓▓████▓▓▓▓████████
+▓▓▓▓▓▓▓▓▓▓█████████████▒▒▒░▓█████████████████████████▓▓▓▓▓▓▓██▓▓▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒▒▒▒▓▓████▓▓▓█████████
+▓▓▓▓▓▓▓▓▓▓▓███████████▓▒▒▓█████████████████▓▓▓▓▓▓▓███████▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▓▒▒▓█████▓▓▓████████
+▓▓▓▓▓▓▓▓▓▓▓▓███████████▒▒▒████████████████████▓▓▓▓▓▓▓▓▓▓▓█▓█████████▓▒▓▓▓▓▒▒▒▒▒▓▓█▓▓███▓▓▓▓▓████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓███████████▓█████████████████████████▓▓▓▓▓▓▓▓██████▓█▓████▓▓▒▒▒▒▒▒▒▓▓▓▓██▓█▓▓▓▓████████
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████▓████▓▓▓██████████████████████▓▓▓████▓▒▒█▒▒▓▓▓█▓▓▓▒▒▒▓▒▒▓▓▓▓▓███▓▓▓▓▓████████
+█▓▓████▓▓▓▓████████████████▓▓▓█▓▓██████▓█▓▓▓▓▓▓▓▓▓▓▓███▓▓▒▒▓▓██▓▓▒▒▒▒▓▓▓▓▒▒▓▒▒▒▓██▓████▓▓█▓▓████████
+██▓███████████████████████████████▓▓████████████████▓▓█▒███▓▒▓▓▓▓▒▒▒▓▓▓▒▒▓▓▒▒▒▓▓▓█████▓▓▓▓▓█████████
+██████▓████████████████████████▓████▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▒▒██████▓▓█▓█████████
+███████████████████████▓░░░▒▒▓██▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓██▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒█▓███▓▓▓▓▓█████████
+███████████████████▒▒▒▒▒░░░░░░░░░▒░░░▓▓▓▓▓█▓▓▓█▓▓▓▓▓▓▓▓▓▓█▓▓▓▒▓▒▓▓▓▓▓▓▓▓▓▓▒▓▓█▒▓██████▓▓▓▓▓█████████
+█████████▓████████▓▒▒▒▒▒░░░░░░░░░░░░░▓▓████▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████▓▓▓██▓▒███████▓▓▓▓██████████
+█████████████████▓▓▓▒░▒▒░░░░░░░░░░░░░░▓▓▓▓██▓█▓██▓▓█▓▓▓▓▓▓▓████████▓███████▓█▓▓███████▓▓▓███████████
+█████████████████▒▒▒▓▒▓▒▒░░░░░░░░░▓░░░█▓▓▓██▓█▓█████▓█████▓▓▓███▓▓███▓▓█▓▓█▓█▓█████████▓▓███████████
+████████████████▓▒░▒▒▒░▒▒▒░░░░░░░▒▓░░░▓▓▓█████████████▒▓▓▒▒▓▒▓▒▒▒▓███▓█████▒███████████▓▓███████████
+████████████████████████████████████▓▓██████████▒▓▓▓▓▒░▓▓▓▓▓▓▓▒█████▒▒▒██▓█████████████▓▓███████████
+███████████████████████████████▓█▓████████████████▓█▓██▓▒█▓██▓███▓▓▓▓▓▓█████████████████████████████
+██████████████████████████████████▓▓▓████████████████▓▒███▓▓▓▓██████████████████████████████████████
+██████████████████████▓██▓▓████████▓▓▓▓▓██████████████▒▒████████████████████████████████████████████
+█████████████████▓▓▓▓▓▓▓▓▓▓▓▓▓███████▓█▓█▓████████████▓█▓███████████████████████████████████████████
+█████████████████▓▓▓▓▓███▓█▓▓█▓███████████████████████████████████████████████████████▓█████████████
+█████████████████▓█▓█▓██████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████
+██████████████████████████████████████████████████▓█████████████████████████████████████████████████
+███████████████████▓███▓████████████████████████▓███████████████████████████████████████████████████
+███████████████████████▓▓▓████████████████████▓▒█▒██▓█▓███████████████████▒█████████████████████████
+██████████████████████████▓███████████████████▒█▒██▓█▓█████████████████████▓████████████████████████
+</pre>
+        </div>
+
+        <div class="portrait-caption">
+          <span class="caption-tag">&#9654; VOICE MODEL / MARX</span>
+          <p class="caption-lead">
+            The theorist of capital and its contradictions. The one who named the spectre.
+            Not a prophet but a <em>materialist</em> &mdash; one who insists the conditions
+            of your life are not destiny but history, and history can be changed.
+          </p>
+          <p class="caption-meta">
+            Fine-tuned on public-domain Marx and Engels. The analysis runs.
+            The century answers for itself.
+          </p>
+          <div class="link-grid" style="margin-top:0.5rem;">
+            <a href="https://huggingface.co/lerugray/spectre-7b" class="link-btn" target="_blank" rel="noopener">
+              <span class="link-icon">&#8967;</span> Weights on Hugging Face
+            </a>
+            <a href="https://github.com/lerugray/spectre-7b" class="link-btn secondary" target="_blank" rel="noopener">
+              <span class="link-icon">&#8967;</span> Repo on GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE CORRESPONDENT — terminal hero
+       ============================================================ -->
+  <section class="oracle-section">
+    <div class="container">
+      <h2 class="section-heading">
+        <span class="heading-rule"></span>
+        <span>THE CORRESPONDENT</span>
+        <span class="heading-rule"></span>
+      </h2>
+      <p class="section-sub">Real output from the model. Unscripted. It invents freely.</p>
+
+      <div class="oracle-terminal" id="oracleTerminal">
+        <div class="terminal-bar">
+          <span class="terminal-label">MARX &middot; spectre:latest</span>
+          <div class="terminal-nav">
+            <button class="nav-btn" id="prevBtn" aria-label="Previous dispatch">&#9664;</button>
+            <span class="oracle-counter" id="oracleCounter">1 / 6</span>
+            <button class="nav-btn" id="nextBtn" aria-label="Next dispatch">&#9654;</button>
+          </div>
+        </div>
+        <div class="oracle-body">
+          <div class="oracle-prompt" id="oraclePrompt">
+            Speak on the rich and the poor.
+          </div>
+          <div class="oracle-text" id="oracleText">
+            The wealth of the bourgeois class has increased tremendously. Today they consume in their private households more food than has always sufficed for whole nations. Meanwhile the proletarians crowd together like sardines, and their food diminishes just as rapidly as production is developed. Thus it results that on the one hand there grows up an enormous accumulation of wealth concentrated ever more exclusively in the hands of a small number of wealthy people; while on the other hand a mass of working men and women grow up who receive barely enough for bare existence, and must continually seek to make this scanty wage suffice for an ever greater family. The interests of the two classes oppose each other in an irreconcilable manner; consequently between these hostile camps stands only a thin, broken line of equilibrium, which will grow steadily thinner until it vanishes completely.<span class="oracle-cursor" aria-hidden="true"></span>
+          </div>
+        </div>
+        <button class="oracle-advance" id="advanceBtn">ASK MARX &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <div class="accuracy-note">
+    <div class="container">
+      <p class="accuracy-note-text">A small language model speaks here. It invents freely: names, dates, sources, events. Read it for the voice, not the record, and check anything before you repeat it.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-heading">
+        <span class="heading-rule"></span>
+        <span>WHAT IT IS</span>
+        <span class="heading-rule"></span>
+      </h2>
+
+      <div class="about-grid">
+        <div class="about-body">
+          <p class="lead">
+            THE SPECTRE is a 7B language model tuned to speak in the register of
+            Karl Marx &mdash; the political economist, the theorist of capital,
+            the man who wrote that history is the history of class struggle.
+            It runs locally via <a href="https://ollama.com" target="_blank" rel="noopener">Ollama</a>.
+            No cloud. No API. No subscription.
+          </p>
+          <p>
+            The corpus is public-domain Marx and Engels &mdash; Capital, the Manifesto,
+            the letters, the polemics. The analytical register: the patient dissection
+            of how capital works, the relation of labour to the machine, the state as
+            instrument, the spectre that refuses to be exorcised.
+          </p>
+          <p>
+            The result speaks in the long, argumentative sentences of someone who has
+            read everything and finds the contradictions everywhere. It is not friendly.
+            It is not trying to reassure you. It is, within the limits of seven billion
+            parameters, something that sounds like it has read the commodity form from
+            the inside out.
+          </p>
+          <p class="about-footnote">
+            Licensed <code>CC-BY-NC-4.0</code>. Public-domain source material.
+            Weights and repo are live below. Part of
+            <a href="https://lerugray.github.io/the-elect/" target="_blank" rel="noopener">The Elect</a> voice lab
+            &mdash; Ray Weiss.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-num">7B</span>
+            <span class="stat-label">parameters</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true">&mdash;</div>
+          <div class="stat-item">
+            <span class="stat-num">local</span>
+            <span class="stat-label">runs on your iron</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true">&mdash;</div>
+          <div class="stat-item">
+            <span class="stat-num">red</span>
+            <span class="stat-label">revolutionary register</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true">&mdash;</div>
+          <div class="stat-item">
+            <span class="stat-num">free</span>
+            <span class="stat-label">CC-BY-NC-4.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LINKS
+       ============================================================ -->
+  <section class="links-section">
+    <div class="container">
+      <h2 class="section-heading">
+        <span class="heading-rule"></span>
+        <span>OBTAIN &amp; RUN</span>
+        <span class="heading-rule"></span>
+      </h2>
+
+      <div class="link-grid">
+        <a href="https://huggingface.co/lerugray/spectre-7b" class="link-btn" target="_blank" rel="noopener">
+          <span class="link-icon">&#8967;</span> Weights on Hugging Face
+        </a>
+        <a href="https://github.com/lerugray/spectre-7b" class="link-btn secondary" target="_blank" rel="noopener">
+          <span class="link-icon">&#8967;</span> GitHub repo
+        </a>
+        <a href="https://lerugray.github.io/the-elect/" class="link-btn elect" target="_blank" rel="noopener">
+          <span class="link-icon">&#x25A0;</span> The Elect &mdash; voice lab
+        </a>
+      </div>
+
+      <p class="license-note">
+        License: <code>CC-BY-NC-4.0</code>. Public-domain source material; weights released, corpus withheld.
+        Attribution: Ray Weiss / The Elect.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       METHOD
+       ============================================================ -->
+  <section class="method-section">
+    <div class="container">
+      <h2 class="section-heading">
+        <span class="heading-rule"></span>
+        <span>HOW IT WAS MADE</span>
+        <span class="heading-rule"></span>
+      </h2>
+
+      <div class="method-inner">
+        <div class="method-rows">
+          <div class="method-step">
+            <div class="step-num">01</div>
+            <div class="step-title">BASE MODEL</div>
+            <p>Qwen2.5-7B-Instruct &mdash; a 7B instruction-tuned base with strong
+            instruction-following and a small VRAM footprint that makes local
+            inference possible on consumer hardware.</p>
+          </div>
+          <div class="method-step">
+            <div class="step-num">02</div>
+            <div class="step-title">FINE-TUNING</div>
+            <p>QLoRA fine-tune on a curated corpus of public-domain Marx and Engels:
+            Capital, the Manifesto, the correspondence, the polemics.
+            The analytical register &mdash; the vocabulary of exploitation, alienation,
+            and historical materialism &mdash; was the target. Corpus withheld.</p>
+          </div>
+          <div class="method-step">
+            <div class="step-num">03</div>
+            <div class="step-title">DEPLOYMENT</div>
+            <p>Quantized to GGUF for local inference via Ollama. Runs on CPU or
+            consumer GPU. The evals test voice fidelity and register consistency &mdash;
+            the model should sound like it is speaking from inside the conditions of
+            production, not above them.</p>
+          </div>
+        </div>
+        <div class="method-stack">
+          <span class="stack-label">Stack</span>
+          <div class="stack-items">
+            <span class="stack-item">Qwen2.5-7B</span>
+            <span class="stack-item">QLoRA</span>
+            <span class="stack-item">Unsloth</span>
+            <span class="stack-item">Ollama</span>
+            <span class="stack-item">GGUF</span>
+            <span class="stack-sep">&middot;</span>
+            <span class="stack-withheld">corpus withheld</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-sigil">&#x25A0; THE ELECT &#x25A0;</div>
+      <p class="footer-note">
+        THE SPECTRE is a voice model, not a factual source. The register it channels
+        is historical. The prose is real. The pronouncements are generated. Check
+        nothing it says against anything that matters.
+      </p>
+      <div class="footer-links">
+        <a href="https://lerugray.github.io/the-elect/" class="footer-link" target="_blank" rel="noopener">The Elect</a>
+        <span class="footer-sep">&middot;</span>
+        <a href="https://huggingface.co/lerugray/spectre-7b" class="footer-link" target="_blank" rel="noopener">Hugging Face</a>
+        <span class="footer-sep">&middot;</span>
+        <a href="https://github.com/lerugray/spectre-7b" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-link" style="color:var(--text-muted)">CC-BY-NC-4.0</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// Correspondent player
+// Loads from assets/samples.json; falls back to 2 inline
+// entries if fetch fails (offline / file:// / no server)
+// ============================================================
+
+const INLINE_ORACLES = [
+  {
+    prompt: "Speak on the rich and the poor.",
+    text: "The wealth of the bourgeois class has increased tremendously. Today they consume in their private households more food than has always sufficed for whole nations. Meanwhile the proletarians crowd together like sardines, and their food diminishes just as rapidly as production is developed. Thus it results that on the one hand there grows up an enormous accumulation of wealth concentrated ever more exclusively in the hands of a small number of wealthy people; while on the other hand a mass of working men and women grow up who receive barely enough for bare existence, and must continually seek to make this scanty wage suffice for an ever greater family. The interests of the two classes oppose each other in an irreconcilable manner; consequently between these hostile camps stands only a thin, broken line of equilibrium, which will grow steadily thinner until it vanishes completely."
+  },
+  {
+    prompt: "Is there ethical consumption under capitalism?",
+    text: "What is capital if not a power that lives by making people die? What is monopoly if it is not a power that kills competition in order to prolong its own life? And what are governments if they're not instruments through which this or that class retains the power to live at the expense of the other classes. What, then, has capitalism got to do with morality? And how can one speak of the so-called 'ethical consumption' under such conditions? Capitalism is an immoral system, that is to say, it's a system in which one lives only at the expense of others — a system which permits no other principle than the principle: he who wants to save his skin must give the skins of others first."
+  }
+];
+
+let oracles = [...INLINE_ORACLES];
+let currentIndex = 0;
+
+const promptEl  = document.getElementById('oraclePrompt');
+const textEl    = document.getElementById('oracleText');
+const counterEl = document.getElementById('oracleCounter');
+const prevBtn   = document.getElementById('prevBtn');
+const nextBtn   = document.getElementById('nextBtn');
+const advanceBtn = document.getElementById('advanceBtn');
+
+function updateCounter() {
+  counterEl.textContent = (currentIndex + 1) + ' / ' + oracles.length;
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function showOracle(idx) {
+  var o = oracles[idx];
+  textEl.classList.add('fading');
+  setTimeout(function() {
+    promptEl.textContent = o.prompt;
+    textEl.innerHTML = escapeHtml(o.text) +
+      '<span class="oracle-cursor" aria-hidden="true"></span>';
+    textEl.classList.remove('fading');
+    updateCounter();
+  }, 240);
+}
+
+prevBtn.addEventListener('click', function() {
+  currentIndex = (currentIndex - 1 + oracles.length) % oracles.length;
+  showOracle(currentIndex);
+});
+
+nextBtn.addEventListener('click', function() {
+  currentIndex = (currentIndex + 1) % oracles.length;
+  showOracle(currentIndex);
+});
+
+advanceBtn.addEventListener('click', function() {
+  currentIndex = (currentIndex + 1) % oracles.length;
+  showOracle(currentIndex);
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight') nextBtn.click();
+  if (e.key === 'ArrowLeft')  prevBtn.click();
+});
+
+// Load full sample set from JSON
+fetch('./assets/samples.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (Array.isArray(data) && data.length > 0) {
+      var valid = data.filter(function(d) {
+        return d && d.text && d.text.trim().length > 0 &&
+               d.text.indexOf('[ERR]') === -1;
+      });
+      if (valid.length > 0) {
+        oracles = valid;
+        currentIndex = 0;
+        showOracle(0);
+        updateCounter();
+      }
+    }
+  })
+  .catch(function() { /* offline / file:// — use inline fallback silently */ });
+
+// Init
+updateCounter();
+
+// ============================================================
+// ASCII portrait — load from assets file
+// ============================================================
+fetch('./assets/marx-ascii.txt')
+  .then(function(r) { return r.text(); })
+  .then(function(txt) {
+    document.getElementById('asciiPortrait').textContent = txt;
+  })
+  .catch(function() {
+    document.getElementById('asciiPortrait').textContent = '';
+  });
+
+</script>
+
+</body>
+</html>

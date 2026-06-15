@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #0a0100;
+    font-family: 'Courier New', 'Lucida Console', monospace;
+  }
+
+  /* Constructivist diagonal stripes — Lissitzky energy */
+  .stripes {
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -55deg,
+        transparent 0px,
+        transparent 38px,
+        rgba(180, 10, 10, 0.04) 38px,
+        rgba(180, 10, 10, 0.04) 40px
+      );
+  }
+
+  /* Radial glow behind name */
+  .glow-blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(200, 20, 20, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .card {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 80px;
+  }
+
+  /* Top and bottom border lines */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 60px; right: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8b1010, transparent);
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: 28px; left: 60px; right: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8b1010, transparent);
+  }
+
+  /* Red accent bar — constructivist stripe */
+  .red-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: #c41a1a;
+  }
+
+  .lab-tag {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: #5a4a40;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .name {
+    font-size: 96px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #e8ddd0;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow:
+      0 0 80px rgba(200, 30, 30, 0.28),
+      0 0 30px rgba(200, 30, 30, 0.12);
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 640px;
+    margin-bottom: 20px;
+  }
+
+  .div-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #5c1010);
+  }
+
+  .div-line:last-child {
+    background: linear-gradient(90deg, #5c1010, transparent);
+  }
+
+  .div-mark {
+    color: #8b1010;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+  }
+
+  .epithet {
+    font-size: 18px;
+    color: #8b1010;
+    letter-spacing: 0.06em;
+    font-style: italic;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .tags {
+    display: flex;
+    gap: 14px;
+  }
+
+  .tag {
+    font-size: 13px;
+    color: #8b1010;
+    border: 1px solid #5c1010;
+    padding: 4px 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(180, 10, 10, 0.05);
+  }
+</style>
+</head>
+<body>
+  <div class="stripes"></div>
+  <div class="red-bar"></div>
+  <div class="glow-blob"></div>
+  <div class="card">
+    <div class="lab-tag">The Elect &mdash; Voice Lab</div>
+    <div class="name">MARX</div>
+    <div class="divider">
+      <span class="div-line"></span>
+      <span class="div-mark">&#x25A0; THE SPECTRE &#x25A0;</span>
+      <span class="div-line"></span>
+    </div>
+    <div class="epithet">The Revolutionary Correspondent, rendered in seven billion parameters</div>
+    <div class="tags">
+      <span class="tag">Qwen2.5-7B</span>
+      <span class="tag">Local Ollama</span>
+      <span class="tag">CC-BY-NC-4.0</span>
+    </div>
+  </div>
+</body>
+</html>
