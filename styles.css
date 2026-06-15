@@ -22,12 +22,19 @@
   /* ── Spectre/Marx: revolutionary red — deep, not fire ── */
   --void:        #000000;
   --red:         #e82020;          /* peak revolutionary red */
-  --red-mid:     #c41a1a;          /* main accent */
-  --red-dim:     #8b1010;          /* border / dim accent */
-  --red-ember:   #5c1010;          /* very dark red surface */
+  --red-mid:     #c41a1a;          /* main accent (borders/surfaces) */
+  --red-dim:     #8b1010;          /* border / dim accent (NON-text) */
+  --red-ember:   #5c1010;          /* very dark red surface (NON-text) */
   --red-glow:    rgba(200, 30, 30, 0.12);
   --red-faint:   rgba(200, 30, 30, 0.05);
-  --portrait-tint: #c41a1a;        /* portrait color: the deep red */
+  /* ── Legible red TEXT — brightened crimson, WCAG AA on the dark bg.
+     The dim/ember/mid reds above stay for borders & surfaces; red TEXT
+     uses these so labels/links/headings clear 4.5:1 (3:1 large) and stop
+     vibrating on near-black. Still clearly red — not pink, not orange. ── */
+  --red-text:    #f23535;          /* ≈5.2:1 on bg — labels, links, captions */
+  --red-text-hi: #ff4444;          /* ≈6.1:1 — peak/hover lift */
+  --portrait-tint: #cf5048;        /* calmed: softer/less-saturated so the
+                                      dense block portrait reads, not glows */
 }
 
 /* ── RESET ── */
@@ -170,12 +177,12 @@ body {
 }
 
 .lab-crumb a {
-  color: var(--red-dim);
+  color: var(--red-text);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.lab-crumb a:hover { color: var(--red-mid); }
+.lab-crumb a:hover { color: var(--red-text-hi); }
 
 /* The name */
 .persona-title {
@@ -195,7 +202,7 @@ body {
   display: block;
   font-size: 0.82rem;
   letter-spacing: 0.08em;
-  color: var(--red-dim);
+  color: var(--red-text);
   margin-bottom: 0.6rem;
   font-style: italic;
 }
@@ -228,7 +235,7 @@ body {
 }
 
 .void-ornament {
-  color: var(--red-dim);
+  color: var(--red-text);
   font-size: 0.72rem;
   letter-spacing: 0.15em;
   white-space: nowrap;
@@ -277,7 +284,12 @@ body {
   font-size: 0.46rem;
   line-height: 0.78;
   letter-spacing: 0;
+  /* Dense ▓/█ block portrait: at full-saturation red on near-black the solid
+     masses read as a glowing, vibrating slab (chromostereopsis). Calmed with a
+     softer/less-saturated red tint + reduced opacity so it reads as a portrait,
+     not a slab. Matches the sibling pages' .marx-art treatment. */
   color: var(--portrait-tint);
+  opacity: 0.78;
   white-space: pre;
   display: block;
   overflow: hidden;
@@ -294,7 +306,7 @@ body {
 .caption-tag {
   font-size: 0.72rem;
   letter-spacing: 0.15em;
-  color: var(--red-dim);
+  color: var(--red-text);
   text-transform: uppercase;
 }
 
@@ -305,7 +317,7 @@ body {
 }
 
 .caption-lead em {
-  color: var(--red);
+  color: var(--red-text-hi);
   font-style: normal;
 }
 
@@ -334,7 +346,7 @@ body {
   gap: 1.5rem;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
-  color: var(--red-mid);
+  color: var(--red-text);
   margin-bottom: 0.75rem;
   text-transform: uppercase;
 }
@@ -382,7 +394,7 @@ body {
 .terminal-label {
   font-size: 0.72rem;
   letter-spacing: 0.15em;
-  color: var(--red-dim);
+  color: var(--red-text);
   text-transform: uppercase;
 }
 
@@ -409,7 +421,7 @@ body {
 
 .nav-btn:hover {
   border-color: var(--red-dim);
-  color: var(--red);
+  color: var(--red-text-hi);
   background: rgba(200, 30, 30, 0.05);
 }
 
@@ -430,7 +442,7 @@ body {
 
 .oracle-prompt {
   font-size: 0.78rem;
-  color: var(--red-dim);
+  color: var(--red-text);
   letter-spacing: 0.06em;
   margin-bottom: 1.25rem;
   text-transform: uppercase;
@@ -440,7 +452,7 @@ body {
 
 .oracle-prompt::before {
   content: '> ';
-  color: var(--red-mid);
+  color: var(--red-text);
 }
 
 .oracle-text {
@@ -476,7 +488,7 @@ body {
   background: transparent;
   border: none;
   border-top: 1px solid var(--red-ember);
-  color: var(--red-dim);
+  color: var(--red-text);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.18em;
@@ -491,7 +503,7 @@ body {
 
 .oracle-advance:hover {
   background: rgba(200, 30, 30, 0.04);
-  color: var(--red);
+  color: var(--red-text-hi);
   border-top-color: var(--red-dim);
 }
 
@@ -562,12 +574,12 @@ body {
 }
 
 .about-body a {
-  color: var(--red-mid);
+  color: var(--red-text);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.about-body a:hover { color: var(--red); }
+.about-body a:hover { color: var(--red-text-hi); }
 
 .about-footnote {
   font-size: 0.78rem !important;
@@ -592,7 +604,7 @@ body {
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--red-mid);
+  color: var(--red-text);
   letter-spacing: 0.05em;
   line-height: 1;
   margin-bottom: 0.25rem;
@@ -640,7 +652,7 @@ body {
   letter-spacing: 0.07em;
   text-decoration: none;
   border: 1px solid var(--red-ember);
-  color: var(--red-mid);
+  color: var(--red-text);
   background: transparent;
   transition: all 0.2s ease;
   text-transform: uppercase;
@@ -649,7 +661,7 @@ body {
 .link-btn:hover {
   background: rgba(200, 30, 30, 0.06);
   border-color: var(--red-mid);
-  color: var(--red);
+  color: var(--red-text-hi);
   box-shadow: 0 0 16px rgba(200, 30, 30, 0.08);
 }
 
@@ -679,7 +691,7 @@ body {
 
 .link-btn.elect:hover {
   border-color: var(--red-ember);
-  color: var(--red-mid);
+  color: var(--red-text);
   background: var(--red-faint);
 }
 
@@ -694,7 +706,7 @@ body {
 }
 
 .license-note code {
-  color: var(--red-dim);
+  color: var(--red-text);
   font-family: var(--font-mono);
 }
 
@@ -735,7 +747,7 @@ body {
 .step-num {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--red-ember);
+  color: var(--red-text);
   line-height: 1;
   margin-bottom: 0.6rem;
   letter-spacing: 0.05em;
@@ -744,7 +756,7 @@ body {
 .step-title {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
-  color: var(--red-dim);
+  color: var(--red-text);
   margin-bottom: 0.6rem;
   text-transform: uppercase;
 }
@@ -782,7 +794,7 @@ body {
 
 .stack-item {
   font-size: 0.78rem;
-  color: var(--red-dim);
+  color: var(--red-text);
   background: rgba(200, 30, 30, 0.04);
   border: 1px solid var(--red-ember);
   padding: 0.18rem 0.55rem;
@@ -811,7 +823,7 @@ body {
 .footer-sigil {
   font-size: 0.72rem;
   letter-spacing: 0.2em;
-  color: var(--red-ember);
+  color: var(--red-text);
   margin-bottom: 0.85rem;
 }
 
@@ -839,7 +851,7 @@ body {
   transition: color 0.2s;
 }
 
-.footer-link:hover { color: var(--red-mid); }
+.footer-link:hover { color: var(--red-text); }
 .footer-sep { color: var(--text-muted); }
 
 /* ============================================================
